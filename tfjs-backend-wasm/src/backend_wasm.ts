@@ -328,7 +328,7 @@ export async function init(): Promise<{wasm: BackendWasmModule}> {
 function typedArrayFromBuffer(
     buffer: ArrayBuffer, dtype: DataType): backend_util.TypedArray {
   switch (dtype) {
-    case 'float32':
+    case 'float32' || null:
       return new Float32Array(buffer);
     case 'int32':
       return new Int32Array(buffer);
